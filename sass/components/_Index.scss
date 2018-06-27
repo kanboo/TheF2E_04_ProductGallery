@@ -1,5 +1,6 @@
 #main {
   margin-bottom: 70px;
+  padding-top: 33px;
 
   .container {
     display: grid;
@@ -8,44 +9,555 @@
     justify-content: center;
   }
 
-  .title {
-    @include outline(red);
+  // 共用==============================
 
+  .img {
+    background-position: 50%;
+    background-size: cover;
+  }
+
+  .title {
+    color: #000000;
+    font-family: Roboto;
+    font-size: 72px;
+    font-weight: bold;
+  }
+
+  .title2 {
+    position: relative;
+    color: #000000;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 48px;
+
+    &::before {
+      content: attr(text);
+      position: absolute;
+      top: -16px;
+      left: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 22px;
+      color: rgba(0, 0, 0, .3);
+    }
+    &::after {
+      content: attr(text);
+      position: absolute;
+      top: -25px;
+      left: 0;
+      overflow: hidden;
+      width: 100%;
+      height: 15px;
+      color: rgba(0, 0, 0, .1);
+    }
+  }
+
+  .subtitle {
+    color: #000000;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .num {
+    color: #000000;
+    font-family: Roboto;
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 48px;
+  }
+
+  .s_border {
+    width: 240px;
+    height: 200px;
+    border: 20px solid $color-green;
+  }
+
+  .s_patter {
+    width: 240px;
+    height: 100px;
+    background-image: -webkit-gradient(
+    linear,
+    0 0,
+    100% 100%,
+    color-stop(.25, $color-green),
+    color-stop(.25, transparent),
+    color-stop(.5, transparent),
+    color-stop(.5, $color-green),
+    color-stop(.75, $color-green),
+    color-stop(.75, transparent),
+    to(transparent)
+    );
+    background-size: 40px 40px;
+  }
+
+  .s_bg {
+    width: 240px;
+    height: 200px;
+    border: 20px solid $color-green;
+    background: $color-green;
+  }
+
+  // 排版==============================
+  .header {
+    // @include outline(red);
+    @include flex(center);
     grid-row: 1;
     grid-column: 1 / -1;
+
+    flex-direction: column;
+
+    .logo {
+      padding: 1px 10px;
+      color: #ffffff;
+      background: #000000;
+      font-weight: bold;
+    }
+
+    .title {
+      position: relative;
+      bottom: -14px;
+    }
   }
 
   .box1 {
-    @include outline(blue);
-
+    // @include outline(blue);
     grid-row: 2 / span 6;
     grid-column: 1 / span 5;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    .title2 {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 3;
+
+      z-index: 99;
+    }
+
+    .img {
+      grid-row: 2 / span 4;
+      grid-column: 1 / span 4;
+
+      z-index: 50;
+    }
+
+    .num {
+      grid-row: -2 / -1;
+      grid-column: 1 / 2;
+    }
+
+    .subtitle {
+      grid-row: -1 / -3;
+      grid-column: -1 / -2;
+
+      writing-mode: vertical-lr;
+    }
+
+    .s_border {
+      grid-row: 1 / span 3;
+      grid-column: span 3 / -1;
+
+      justify-self: center;
+      align-self: center;
+    }
+
+    .s_patter {
+      grid-row: span 2 / -1;
+      grid-column: 1 / span 3;
+
+      z-index: 60;
+      justify-self: center;
+      align-self: center;
+    }
   }
 
   .box2 {
-    @include outline(orange);
-
+    // @include outline(orange);
     grid-row: 3 / span 4;
-    grid-column: span 3 / -1;
+    grid-column: span 4 / -1;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+
+    .title2 {
+      grid-row: span 1 / -1;
+      grid-column: span 2 / -1;
+
+      z-index: 99;
+      align-self: center;
+    }
+
+    .img {
+      grid-row: 2 / span 2;
+      grid-column: span 2 / -2;
+
+      z-index: 99;
+    }
+
+    .num {
+      grid-row: 1;
+      grid-column: span 1 / -1;
+
+      z-index: 99;
+      justify-self: end;
+    }
+
+    .subtitle {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 2;
+
+      z-index: 99;
+      justify-self: end;
+      align-self: end;
+    }
+
+    .s_border {
+      grid-row: 1 / span 2;
+      grid-column: span 2 / -1;
+    }
+
+    .s_bg {
+      grid-row: 1 / span 3;
+      grid-column: span 3 / -1;
+
+      z-index: 60;
+      justify-self: center;
+      align-self: center;
+    }
   }
 
   .box3 {
-    @include outline(red);
-
+    // @include outline(red);
     grid-row: 8 / span 4;
     grid-column: 1 / span 5;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    .title2 {
+      grid-row: 1 / span 1;
+      grid-column: 2 / span 3;
+
+      z-index: 99;
+      justify-self: end;
+      align-self: end;
+    }
+
+    .img {
+      grid-row: 2 / span 2;
+      grid-column: 1 / span 4;
+
+      z-index: 99;
+    }
+
+    .num {
+      grid-row: span 1 / -1;
+      grid-column: span 1 / -1;
+
+      z-index: 99;
+      justify-self: start;
+      align-self: start;
+    }
+
+    .subtitle {
+      grid-row: span 1 / -1;
+      grid-column: 1 / span 2;
+
+      justify-self: end;
+    }
+
+    .s_border {
+      grid-row: 2 / span 3;
+      grid-column: span 3 / -1;
+
+      justify-self: center;
+      align-self: center;
+    }
+
+    .s_bg {
+      grid-row: 1 / span 3;
+      grid-column: 1 / span 2;
+
+      z-index: 60;
+      justify-self: center;
+      align-self: center;
+    }
   }
 
   .box4 {
-    @include outline(orange);
-
+    // @include outline(orange);
     grid-row: 7 / span 7;
     grid-column: span 3 / -1;
+
+    display: grid;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+    .title2 {
+      grid-row: 3 / span 2;
+      grid-column: 1 / span 1;
+
+      z-index: 99;
+      justify-self: end;
+      align-self: center;
+      transform: rotate(180deg);
+
+      writing-mode: vertical-lr;
+
+      &::before {
+        top: 0;
+        left: 9px;
+        width: 42px;
+        height: 100%;
+      }
+      &::after {
+        top: 0;
+        left: 19px;
+        width: 43px;
+        height: 100%;
+      }
+    }
+
+    .img {
+      grid-row: 3 / span 4;
+      grid-column: span 2 / -1;
+
+      z-index: 50;
+    }
+
+    .num {
+      grid-row: span 1 / -2;
+      grid-column: 1 / span 1;
+
+      justify-self: end;
+      align-self: end;
+    }
+
+    .subtitle {
+      grid-row: 1 / span 2;
+      grid-column: span 1 / -1;
+
+      z-index: 99;
+      justify-self: center;
+      align-self: end;
+      margin-bottom: 6px;
+
+      writing-mode: vertical-lr;
+    }
+
+    .s_border {
+      grid-row: 2 / span 2;
+      grid-column: 1 / span 3;
+
+      justify-self: center;
+    }
+
+    .s_patter {
+      grid-row: span 2 / -1;
+      grid-column: span 2 / -1;
+
+      z-index: 60;
+      align-self: center;
+    }
+  }
+
+  .box5 {
+    // @include outline(red);
+    grid-row: 12 / span 4;
+    grid-column: 1 / span 6;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+
+    .title2 {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 3;
+
+      z-index: 99;
+      align-self: end;
+    }
+
+    .img {
+      grid-row: 2 / span 2;
+      grid-column: 3 / span 2;
+
+      z-index: 70;
+    }
+
+    .num {
+      grid-row: 3 / span 1;
+      grid-column: 2 / span 1;
+
+      z-index: 70;
+      align-self: end;
+    }
+
+    .subtitle {
+      grid-row: 2 / span 1;
+      grid-column: span 2 / -1;
+
+      justify-self: start;
+      align-self: start;
+    }
+
+    .s_border {
+      grid-row: span 2 / -1;
+      grid-column: 2 / span 2;
+
+      align-self: center;
+      height: 100px;
+    }
+
+    .s_patter {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 3;
+
+      z-index: 80;
+      justify-self: center;
+      align-self: center;
+    }
+  }
+
+  .box6 {
+    // @include outline(orange);
+    grid-row: 14 / span 6;
+    grid-column: span 5 / -1;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+
+    .title2 {
+      grid-row: 1 / span 1;
+      grid-column: span 3 / -1;
+
+      align-self: end;
+    }
+
+    .img {
+      grid-row: 2 / span 4;
+      grid-column: 2 / span 4;
+
+      z-index: 99;
+    }
+
+    .num {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 1;
+
+      justify-self: end;
+      align-self: end;
+    }
+
+    .subtitle {
+      grid-row: span 1 / -1;
+      grid-column: span 2 / -2;
+
+      justify-self: center;
+      align-self: start;
+    }
+
+    .s_border {
+      grid-row: span 3 / -1;
+      grid-column: 2 / span 4;
+
+      align-self: center;
+      width: 480px;
+      height: 200px;
+    }
+
+    .s_bg {
+      grid-row: span 2 / -2;
+      grid-column: 1 / span 3;
+
+      justify-self: center;
+    }
+  }
+
+  .box7 {
+    // @include outline(red);
+    grid-row: 16 / span 5;
+    grid-column: 1 / span 3;
+
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+
+    .title2 {
+      grid-row: 2 / span 2;
+      grid-column: span 1 / -1;
+
+      z-index: 99;
+      justify-self: start;
+
+      writing-mode: vertical-lr;
+
+      &::before {
+        top: 0;
+        left: 9px;
+        width: 42px;
+        height: 100%;
+      }
+      &::after {
+        top: 0;
+        left: 19px;
+        width: 43px;
+        height: 100%;
+      }
+    }
+
+    .img {
+      grid-row: 2 / span 4;
+      grid-column: 1 / span 2;
+
+      z-index: 99;
+    }
+
+    .num {
+      grid-row: span 1 / -1;
+      grid-column: span 1 / -1;
+
+      z-index: 99;
+      justify-self: end;
+      align-self: end;
+    }
+
+    .subtitle {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 2;
+
+      z-index: 99;
+      justify-self: start;
+      align-self: end;
+    }
+
+    .s_border {
+      grid-row: 1 / span 5;
+      grid-column: 1 / span 3;
+
+      justify-self: center;
+      align-self: center;
+      width: 240px;
+      height: 400px;
+    }
+
+    .s_bg {
+      grid-row: span 2 / -1;
+      grid-column: span 2 / -1;
+    }
   }
 }
 
 #footer {
   position: fixed;
+  z-index: 99999;
   bottom: 0;
   display: flex;
   justify-content: center;
