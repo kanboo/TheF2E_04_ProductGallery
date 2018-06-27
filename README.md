@@ -8,7 +8,7 @@ Demo 連結：[ProductGallery](https://kanboo.github.io/TheF2E_04_ProductGallery
 
 # Preview
 
-![Image](https://raw.githubusercontent.com/kanboo/TheF2E_04_ProductGallery/master/SideProjectImage/ProductGallery_01.jpg)
+![Image](https://raw.githubusercontent.com/kanboo/TheF2E_04_ProductGallery/master/SideProjectImage/ProductGallery.jpg)
 
 # 資源
 
