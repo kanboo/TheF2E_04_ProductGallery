@@ -2,9 +2,9 @@
 
 使用工具： Grid + SCSS
 
-第三方套件： [Font Awesome](https://fontawesome.com/)
-
 主要目標： Grid 的運用 及 手刻 CSS
+
+Demo 連結：[ProductGallery](https://kanboo.github.io/TheF2E_04_ProductGallery/)
 
 # 資源
 

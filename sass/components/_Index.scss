@@ -300,27 +300,18 @@
     grid-template-columns: repeat(3, 1fr);
 
     .title2 {
-      grid-row: 3 / span 2;
+      grid-row: 3 / span 1;
       grid-column: 1 / span 1;
 
       z-index: 99;
-      justify-self: end;
-      align-self: center;
-      transform: rotate(180deg);
-
-      writing-mode: vertical-lr;
+      width: 100px;
+      transform: translate(75%, 0) rotate(-90deg);
 
       &::before {
-        top: 0;
-        left: 9px;
-        width: 42px;
-        height: 100%;
+        width: 146px;
       }
       &::after {
-        top: 0;
-        left: 19px;
-        width: 43px;
-        height: 100%;
+        width: 146px;
       }
     }
 
@@ -491,25 +482,18 @@
     grid-template-columns: repeat(3, 1fr);
 
     .title2 {
-      grid-row: 2 / span 2;
+      grid-row: 2 / span 1;
       grid-column: span 1 / -1;
 
       z-index: 99;
-      justify-self: start;
-
-      writing-mode: vertical-lr;
+      width: 100px;
+      transform: translate(-55%, 0) rotate(90deg);
 
       &::before {
-        top: 0;
-        left: 9px;
-        width: 42px;
-        height: 100%;
+        width: 180px;
       }
       &::after {
-        top: 0;
-        left: 19px;
-        width: 43px;
-        height: 100%;
+        width: 180px;
       }
     }
 
