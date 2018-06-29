@@ -1,8 +1,8 @@
-# TheF2E_04_ProductGallery
+# 產品圖庫 Product Gallery
 
 使用工具： Grid + SCSS
 
-主要目標： Grid 的運用 及 手刻 CSS
+主要目標： 將設計師的設計稿，完整呈現於 Web 上展示
 
 Demo 連結：[ProductGallery](https://kanboo.github.io/TheF2E_04_ProductGallery/)
 
